@@ -1,0 +1,24 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Create Release Package
+      run: |
+        zip -r glucose-revolution-skill.zip . -x ".git/*" ".github/*" ".gitignore"
+        
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: glucose-revolution-skill.zip
+        generate_release_notes: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
