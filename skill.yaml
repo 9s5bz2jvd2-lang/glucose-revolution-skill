@@ -47,16 +47,49 @@ triggers:
 conversation:
   # 是否保持上下文
   context_aware: true
+  
   # 最大上下文轮数
-  max_context_turns: 20
+  # 设置为100轮，支持一个月的密集跟踪咨询
+  # 1轮 = 用户输入 + AI回复，100轮 ≈ 50次来回对话
+  max_context_turns: 100
+  
+  # 平台自适应：如果平台支持更长上下文，自动扩展
+  # 优先级：平台最大限制 > 100轮 > 默认20轮
+  adaptive_context: true
+  
   # 默认回复语言
   default_language: zh-CN
+  
   # 支持多轮对话
   multi_turn: true
+  
   # 主动引导
   proactive_guidance: true
+  
   # 跟进提醒
   follow_up: true
+  
+  # 长对话优化：定期总结关键信息，防止上下文膨胀
+  periodic_summary: true
+  summary_interval: 20  # 每20轮主动总结一次
+  
+  # 关键信息持久化：跨会话记住核心信息
+  persistent_context:
+    - user_symptoms       # 用户症状记录
+    - user_goals          # 用户目标（减肥/精力/皮肤/睡眠）
+    - user_profile        # 用户画像（初学者/专业人士等）
+    - given_advice        # 已给建议及用户反馈
+    - progress_tracking   # 进度跟踪（尝试天数、改善情况）
+    - dietary_preferences # 饮食偏好（爱吃米饭/经常外食等）
+  
+  # 上下文管理策略
+  context_management:
+    # 当接近上限时，保留关键信息，压缩早期对话
+    compression_strategy: "preserve_key_info"
+    # 始终保留的轮数（最近的对话）
+    preserve_recent: 30
+    # 定期归档间隔
+    archive_interval: 50
 
 # 教学配置
 teaching:

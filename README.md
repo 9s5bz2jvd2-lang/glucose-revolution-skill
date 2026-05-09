@@ -1,50 +1,54 @@
-# 🩺 控糖革命 Skill
+# 控糖革命 Skill (Glucose Revolution Skill)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/glucose-revolution-skill)
-[![Platform](https://img.shields.io/badge/platform-WorkBuddy%20%7C%20灵台%20AI-green.svg)]()
+基于《控糖革命》(Glucose Revolution) 的血糖管理教学专家 Skill。
 
-> 基于《控糖革命》(Glucose Revolution) 的血糖管理教学专家 Skill
-> 
-> 支持**自然对话交互**，像和专家聊天一样获得个性化的血糖管理建议
+## 简介
 
----
+本 Skill 融合了《控糖革命》一书的 80 个教学知识点(TKP)，支持**自然对话交互**，像和专家聊天一样获得个性化的血糖管理建议。
 
-## ✨ 核心特性
+## 核心特性
 
-### 🗣️ 对话式交互
-- **自测评估** — 通过对话完成症状自测（30秒）
-- **症状咨询** — 描述困扰，获得针对性建议
-- **场景指导** — 聚餐、便利店、外食等具体场景
-- **跟进反馈** — 尝试后反馈效果，调整方案
-- **多轮对话** — 记住上下文，持续优化建议
+### 🗣️ 对话式交互（支持100轮长对话）
+- **自测评估**：通过对话完成症状自测（30秒）
+- **症状咨询**：描述你的困扰，获得针对性建议
+- **场景指导**：聚餐、便利店、外食等具体场景
+- **跟进反馈**：尝试后反馈效果，调整方案
+- **长对话跟踪**：支持100轮（约50次来回），可进行月度习惯养成跟踪
+- **平台自适应**：根据平台支持的最大上下文自动优化
+- **关键信息持久化**：跨会话记住症状、目标、进度
 
 ### 📚 知识深度
-- **80个TKP** — 完整的控糖知识体系
-- **三级教学** — 初学者/进阶者/专家级自动适配
-- **10个窍门** — 从饮食顺序到餐后运动的实用技巧
-- **三条因果链** — 疾病链、果糖链、策略链
+- **80个TKP**：完整的控糖知识体系
+- **三级教学**：初学者/进阶者/专家级自动适配
+- **10个窍门**：从饮食顺序到餐后运动的实用技巧
+- **三条因果链**：疾病链、果糖链、策略链
 
----
+## 安装
 
-## 🚀 快速开始
-
-### 安装
+### 方式1：自动安装
 
 ```bash
-# 方式1：自动安装
-git clone https://github.com/yourusername/glucose-revolution-skill.git
+# Linux/Mac
 cd glucose-revolution-skill
-bash install.sh  # 或 Windows 双击 install.bat
+bash install.sh
 
-# 方式2：手动复制到 WorkBuddy
+# Windows
+双击 install.bat
+```
+
+### 方式2：手动复制
+
+```bash
+# WorkBuddy
 cp -r glucose-revolution-skill ~/.workbuddy/skills/custom/
 
-# 方式3：手动复制到 灵台 TUI
+# 灵台 TUI
 cp -r glucose-revolution-skill ~/.lingtai/custom/
 ```
 
-### 使用
+## 使用方法
+
+### 快速开始
 
 安装后，像聊天一样和 Skill 对话：
 
@@ -59,11 +63,9 @@ Skill：你好，我是控糖导师。我可以帮你：
 想从哪里开始？或者直接告诉我你的困扰。
 ```
 
----
+### 对话示例
 
-## 💬 对话示例
-
-### 示例1：餐后困倦
+**场景1：餐后困倦**
 ```
 你：我总是午饭后很困
 
@@ -75,7 +77,7 @@ Skill：这是典型的血糖波动症状...
 Skill：盖浇饭可以这样吃：先吃菜，最后吃米饭...
 ```
 
-### 示例2：减肥困难
+**场景2：减肥困难**
 ```
 你：想减肥但少吃多动也不瘦
 
@@ -87,7 +89,7 @@ Skill：这可能和胰岛素有关...
 Skill：早餐改为鸡蛋+牛油果...
 ```
 
-### 示例3：自测评估
+**场景3：自测评估**
 ```
 你：我想做个自测
 
@@ -104,23 +106,14 @@ Skill：你命中了3项...
 
 更多对话示例见 [EXAMPLES.md](EXAMPLES.md)
 
----
+## Skill 能力
 
-## 📖 文档
+### 1. 对话式自测评估
+- 引导式症状自测
+- 个性化风险评估
+- 针对性建议路径
 
-| 文档 | 说明 |
-|------|------|
-| [QUICK_REFERENCE.md](QUICK_REFERENCE.md) | 5分钟上手，一日示范，症状-对策速查 |
-| [EXAMPLES.md](EXAMPLES.md) | 10个完整对话示例 |
-| [CONVERSATION_GUIDE.md](CONVERSATION_GUIDE.md) | 对话流程设计，交互模式说明 |
-| [METHODOLOGY.md](METHODOLOGY.md) | TKP→Skill转化方法论 |
-
----
-
-## 🎯 能力清单
-
-### 症状-对策映射
-
+### 2. 症状-对策映射
 | 症状 | Skill 回应 |
 |------|-----------|
 | 餐后困倦 | 饮食顺序 + 餐前醋 + 饭后运动 |
@@ -129,44 +122,62 @@ Skill：你命中了3项...
 | 饿怒症 | 平稳早餐 + 咸香零食替代 |
 | 脑雾 | 饮食顺序 + 避免血糖过山车 |
 
-### 场景化指导
+### 3. 场景化指导
+- **聚餐/应酬**：先吃菜、喝酒前垫肚子、选择干型葡萄酒
+- **便利店**：茶叶蛋+蔬菜沙拉、烤鸡腿+关东煮
+- **想吃甜食**：放在正餐后吃、先吃蛋白质缓冲
+- **早餐设计**：鸡蛋+牛油果+少量全麦
 
-- **聚餐/应酬** — 先吃菜、喝酒前垫肚子、选择干型葡萄酒
-- **便利店** — 茶叶蛋+蔬菜沙拉、烤鸡腿+关东煮
-- **想吃甜食** — 放在正餐后吃、先吃蛋白质缓冲
-- **早餐设计** — 鸡蛋+牛油果+少量全麦
+### 4. 三级教学
+- **初学者**：生活化比喻，避免术语
+- **进阶者**：机制解释，生理通路
+- **专家级**：研究引用，前沿讨论
 
----
+### 5. 10个控糖窍门
+1. ✅ 正确的饮食顺序
+2. ✅ 增加绿色开胃菜
+3. ✅ 停止计算热量
+4. ✅ 平稳早餐原则
+5. ✅ 所有糖都一样
+6. ✅ 集中吃甜点
+7. ✅ 餐前喝醋
+8. ✅ 饭后运动
+9. ✅ 咸香零食替代
+10. ✅ 给碳水"穿上外衣"
 
-## 🔑 触发关键词
+## 触发关键词
 
 - "控糖" / "血糖" / "血糖峰值"
 - "饮食顺序" / "胰岛素" / "葡萄糖"
 - "餐后困倦" / "饿怒症" / "减肥困难"
 - "怎么控糖" / "控糖建议" / "控糖自测"
+- ...或任何与血糖管理相关的问题
 
----
-
-## 📂 文件结构
+## 文件结构
 
 ```
 glucose-revolution-skill/
 ├── skill.yaml              # Skill 配置
 ├── system_prompt.md        # 核心系统提示词
 ├── README.md               # 本文件
-├── QUICK_REFERENCE.md      # 快速参考卡
+├── QUICK_REFERENCE.md      # 快速参考卡（5分钟上手）
 ├── CONVERSATION_GUIDE.md   # 对话交互指南
 ├── EXAMPLES.md             # 对话示例集
 ├── METHODOLOGY.md          # 方法论文档
 ├── install.sh              # Linux/Mac 安装脚本
-├── install.bat             # Windows 安装脚本
-├── LICENSE                 # MIT 许可证
-└── .gitignore              # Git 忽略文件
+└── install.bat             # Windows 安装脚本
 ```
 
----
+## 使用文档
 
-## 🧠 知识来源
+| 文档 | 用途 |
+|------|------|
+| [QUICK_REFERENCE.md](QUICK_REFERENCE.md) | 5分钟上手，一日示范，症状-对策速查 |
+| [EXAMPLES.md](EXAMPLES.md) | 10个完整对话示例，覆盖各种场景 |
+| [CONVERSATION_GUIDE.md](CONVERSATION_GUIDE.md) | 对话流程设计，交互模式说明 |
+| [METHODOLOGY.md](METHODOLOGY.md) | TKP→Skill转化方法论 |
+
+## 知识来源
 
 - **书名**：《控糖革命》(Glucose Revolution)
 - **作者**：Jessie Inchauspé
@@ -174,35 +185,33 @@ glucose-revolution-skill/
 - **总字符数**：约 270,000 字符
 - **方法论**：Teaching Meta-Methodology（改编自impersonate-meta）
 
----
+## 对话能力说明
 
-## ⚠️ 免责声明
+本 Skill 支持以下对话模式：
+
+1. **开放式咨询**：随时提问，即时回应
+2. **引导式自测**：主动引导完成症状评估
+3. **个性化方案**：根据具体情况设计方案
+4. **场景化咨询**：针对聚餐、便利店等具体场景
+5. **跟进对话**：记住之前的建议，跟进效果
+
+### 多轮对话示例
+
+```
+用户：我总是下午很困
+Skill：[给出建议]
+
+用户：我试了，没那么困了
+Skill：[肯定效果，给出下一步]
+
+用户：还有什么方法？
+Skill：[深化建议，提供更多窍门]
+```
+
+## 免责声明
 
 本 Skill 提供的建议基于《控糖革命》一书的研究成果，仅供参考，不构成医疗建议。如有健康问题，请咨询专业医生。
 
----
+## 许可证
 
-## 📄 许可证
-
-[MIT](LICENSE) © 2025 WorkBuddy / 灵台 AI
-
----
-
-## 🤝 贡献
-
-欢迎提交 Issue 和 PR！
-
-如果你有：
-- 新的对话场景建议
-- 控糖窍门的实践经验
-- 教学方法的改进意见
-
-都可以通过 Issue 分享。
-
----
-
-## 🙏 致谢
-
-- [《控糖革命》](https://www.amazon.com/Glucose-Revolution-Life-Changing-Power-Balancing/dp/1982179414) — Jessie Inchauspé 的突破性研究
-- [impersonate-meta](https://github.com/huangzesen/impersonate-meta) — 方法论启发
-- Teaching Meta-Methodology — 教材蒸馏方法论
+MIT License
