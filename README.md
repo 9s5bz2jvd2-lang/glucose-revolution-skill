@@ -1,5 +1,7 @@
 # 🍬 控糖革命 Skill
 
+[English version](README.en.md)
+
 > 你的专属控糖搭子，让血糖管理变得轻松有趣
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
